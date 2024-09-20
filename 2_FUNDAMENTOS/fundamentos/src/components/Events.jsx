@@ -4,7 +4,15 @@ const Events = () => {
 
     const HardEvent = () => {
         console.log("Executando a função")
-    }
+    };
+
+    const renderSomethingr = (x) => {
+        if(x) {
+            return <h1>Retornado esse elemento</h1>
+        }else {
+            return <h1>Retornando outro </h1>
+        }
+    };
 
   return (
     <div>
@@ -20,6 +28,10 @@ const Events = () => {
                 Click aq - com função
             </button>
         </div>
+
+        {/* 8 - Função com reder */}
+        {renderSomethingr(true)}
+        {renderSomethingr(false)}
     </div>
 
     
