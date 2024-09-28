@@ -16,9 +16,24 @@ import CarDestails from './Componentes/CarDestails'
     {id: 2, brand: "Audi", color: "Cinza" },
     {id: 3, brand: "Merceds", color: "Verde"}
   ]
-
+  // 12 - Childer
+import Container from './Componentes/Container'
+  // 13 - funcão com prop
+import FunctionConponet from './Componentes/FunctionConponet'
+  // 14 - state lift
+import Menssagem from './Componentes/Menssagem'
+import { useState } from 'react'
+import HedMenss from './Componentes/HedMenss'
 
 function App() {
+  const [menssage, setMenssage] = useState("");
+  const haderMenssage = (msg) => {
+    setMenssage(msg)
+  }
+
+  const FuncShow = () => {
+    console.log("Chmando funcao com prop")
+  }
 
   return (
     <>
@@ -50,6 +65,24 @@ function App() {
             KM={car.km}
           />
         ))}
+        // 12 - Children
+          <Container>
+            <div>
+                <p>Conteudo "Chiltren"</p>
+            </div>
+            <div>
+              <ul>
+                <li>Martelo</li>
+                <li>Prego</li>
+                <li>Ovo</li>
+              </ul>
+            </div>
+          </Container>
+        {/* 13 - Funcao com prop */}
+        <FunctionConponet myFunction={FuncShow}/>
+        {/* 14 - state left */}
+        <Menssagem msg={menssage}/>
+        <HedMenss haderMenssage={haderMenssage}/>
     </>
   )
 }
